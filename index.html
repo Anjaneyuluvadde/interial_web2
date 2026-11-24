@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treefalls — Build Your Dream Home | Modern Architectural Living</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover architectural excellence and bespoke luxury homes with Treefalls. Sustainable, high-performance residences crafted to elevate your lifestyle.">
+  <meta name="keywords" content="luxury real estate, custom homes, modern architecture, dream home, sustainable villas, bespoke residences">
+  <meta name="author" content="Treefalls Real Estate">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://treefalls.netlify.app/">
+  <meta property="og:title" content="Treefalls — Build Your Dream Home">
+  <meta property="og:description" content="Discover architectural excellence and bespoke luxury homes with Treefalls. Sustainable residences crafted for modern living.">
+  <meta property="og:image" content="frames/f_094.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Treefalls — Build Your Dream Home">
+  <meta name="twitter:description" content="Discover architectural excellence and bespoke luxury residences with Treefalls.">
+  <meta name="twitter:image" content="frames/f_094.webp">
+
+  <!-- Favicon (Inline SVG to prevent 404 errors) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Accessible skip to content link -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
+  <!-- Simple Loading Screen -->
+  <div id="loader" class="loader-overlay" aria-live="polite">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading experience <span id="loader-progress">0%</span></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <!-- Logo with house icon -->
+      <a href="#" class="nav-logo" aria-label="Treefalls Home">
+        <svg class="house-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/>
+        </svg>
+        <span class="logo-text">Treefalls</span>
+      </a>
+
+      <!-- Center navigation links (Desktop) -->
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Right actions: Search icon & Sign Up button & Hamburger (Mobile) -->
+      <div class="nav-actions">
+        <button class="icon-btn search-btn" aria-label="Search properties">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button class="btn btn-primary nav-signup-btn">Sign Up</button>
+        
+        <!-- Hamburger Menu Button (< 768px) -->
+        <button class="nav-hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <button class="btn btn-primary mobile-signup-btn">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <!-- Main Two-Column Row (Stacks with Canvas first on < 768px) -->
+        <div class="hero-main">
+          <!-- Building Canvas with Autoplay Video -->
+          <div class="hero-right">
+            <div class="canvas-wrapper" id="canvas-wrapper" title="Click to pause or replay building animation">
+              <canvas id="building" aria-label="Autoplaying 3D architectural building construction time-lapse video">
+                <p>Interactive 3D building architectural visualization.</p>
+              </canvas>
+              <!-- Live Video Playback Indicator Pill -->
+              <div class="video-indicator" aria-label="Video playing automatically">
+                <span class="indicator-dot"></span>
+                <span class="indicator-text">Auto Playing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Area -->
+          <div class="hero-left">
+            <div class="tag-pills">
+              <span class="pill">New Home</span>
+              <span class="pill">For End Users</span>
+            </div>
+
+            <h1 class="hero-headline">Build Your Dream Home</h1>
+
+            <p class="hero-description">
+              Discover architectural excellence crafted to elevate your lifestyle. We pair bespoke engineering with sustainable craftsmanship to shape spaces you'll cherish forever.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#properties" class="btn btn-primary">Sign Now</a>
+              <a href="#how-it-works" class="btn btn-outline">Learn More</a>
+            </div>
+
+            <!-- Slider Dots under the hero buttons -->
+            <div class="slider-dots" role="tablist" aria-label="Hero carousel pagination">
+              <button class="dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+              <button class="dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overlapping Row of 3 White Rounded Cards (Stacks vertically on < 768px) -->
+        <div class="hero-cards">
+          <!-- Card 1: Featured Property with generated luxury image -->
+          <div class="info-card">
+            <div class="card-media">
+              <img src="images/property_1.webp" alt="Featured Property architectural view" class="interior-thumb" loading="eager">
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Featured Property</h3>
+              <p class="card-desc">The Obsidian Sanctuary — Luxury Alpine Villa.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Find Details with icon -->
+          <div class="info-card">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Find Details</h3>
+              <p class="card-desc">Comprehensive blueprints and spatial dimensions.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Open House with icon -->
+          <div class="info-card">
+            <div class="card-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <path d="M10 16l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Open House</h3>
+              <p class="card-desc">Join private guided walkthroughs every weekend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. "Our Properties" Section (Opposite Moving Dual-Row Marquee) -->
+    <section class="section-padding animate-section properties-section" id="properties">
+      <div class="container">
+        <div class="section-header">
+          <span class="pill">Exclusive Listings</span>
+          <h2 class="section-title">Our Properties</h2>
+          <p class="section-subtitle">
+            Explore handpicked modern architectural estates and residences crafted with sustainable precision.
+          </p>
+        </div>
+      </div>
+
+      <!-- Dual Row Marquee (Row 1 moves Right, Row 2 moves Left) -->
+      <div class="properties-marquee-container" aria-label="Featured architectural properties gallery">
+        <!-- Row 1: Moves Right -->
+        <div class="properties-row row-move-right" aria-label="Properties row 1 (moving right)">
+          <div class="properties-track track-move-right">
+            <!-- Card 1 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">For Sale</div>
+                <img src="images/property_1.webp" alt="The Obsidian Sanctuary — Luxury modern alpine villa" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$2,450,000</span>
+                  <span class="property-type">Villa</span>
+                </div>
+                <h3 class="property-name">The Obsidian Sanctuary</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  104 Alpine Crest, Aspen, CO
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 4 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 4.5 Baths</span>
+                  <span class="feat-item">4,850 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">New Launch</div>
+                <img src="images/property_2.webp" alt="Solaria Waterfront Residence — Cantilevered beachfront villa" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$1,820,000</span>
+                  <span class="property-type">Waterfront</span>
+                </div>
+                <h3 class="property-name">Solaria Waterfront Residence</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  72 Marina Blvd, Miami, FL
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 3 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 3 Baths</span>
+                  <span class="feat-item">3,400 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">Featured</div>
+                <img src="images/property_3.webp" alt="Pinecrest Modern Haven — Glass and concrete multi-level estate" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$3,150,000</span>
+                  <span class="property-type">Estate</span>
+                </div>
+                <h3 class="property-name">Pinecrest Modern Haven</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  880 Highland Way, Austin, TX
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 5 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 5 Baths</span>
+                  <span class="feat-item">5,600 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Seamless Duplicate for Infinite Loop (Row 1) -->
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">For Sale</div>
+                <img src="images/property_1.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$2,450,000</span>
+                  <span class="property-type">Villa</span>
+                </div>
+                <h3 class="property-name">The Obsidian Sanctuary</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  104 Alpine Crest, Aspen, CO
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 4 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 4.5 Baths</span>
+                  <span class="feat-item">4,850 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">New Launch</div>
+                <img src="images/property_2.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$1,820,000</span>
+                  <span class="property-type">Waterfront</span>
+                </div>
+                <h3 class="property-name">Solaria Waterfront Residence</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  72 Marina Blvd, Miami, FL
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 3 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 3 Baths</span>
+                  <span class="feat-item">3,400 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">Featured</div>
+                <img src="images/property_3.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$3,150,000</span>
+                  <span class="property-type">Estate</span>
+                </div>
+                <h3 class="property-name">Pinecrest Modern Haven</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  880 Highland Way, Austin, TX
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 5 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 5 Baths</span>
+                  <span class="feat-item">5,600 sq ft</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Row 2: Moves Left -->
+        <div class="properties-row row-move-left" aria-label="Properties row 2 (moving left)">
+          <div class="properties-track track-move-left">
+            <!-- Card 4 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">For Sale</div>
+                <img src="images/property_4.webp" alt="Azure Horizon Penthouse — Luxury rooftop terrace with plunge pool" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$1,490,000</span>
+                  <span class="property-type">Penthouse</span>
+                </div>
+                <h3 class="property-name">Azure Horizon Penthouse</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  210 Skyway Ave, Seattle, WA
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 3 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 2.5 Baths</span>
+                  <span class="feat-item">2,950 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">Verified</div>
+                <img src="images/property_5.webp" alt="Cedar Ridge Modern Villa — Limestone and Japanese cedar villa" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$2,890,000</span>
+                  <span class="property-type">Contemporary</span>
+                </div>
+                <h3 class="property-name">Cedar Ridge Modern Villa</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  512 Valley Rd, Boulder, CO
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 4 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 4 Baths</span>
+                  <span class="feat-item">4,200 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="property-card">
+              <div class="property-media">
+                <div class="property-badge">Hot Offer</div>
+                <img src="images/property_6.webp" alt="The Minimalist Loft — Industrial chic steel and glass residence" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$980,000</span>
+                  <span class="property-type">Modern Loft</span>
+                </div>
+                <h3 class="property-name">The Minimalist Loft</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  340 Elm District, Portland, OR
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 2 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 2 Baths</span>
+                  <span class="feat-item">1,850 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Seamless Duplicate for Infinite Loop (Row 2) -->
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">For Sale</div>
+                <img src="images/property_4.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$1,490,000</span>
+                  <span class="property-type">Penthouse</span>
+                </div>
+                <h3 class="property-name">Azure Horizon Penthouse</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  210 Skyway Ave, Seattle, WA
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 3 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 2.5 Baths</span>
+                  <span class="feat-item">2,950 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">Verified</div>
+                <img src="images/property_5.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$2,890,000</span>
+                  <span class="property-type">Contemporary</span>
+                </div>
+                <h3 class="property-name">Cedar Ridge Modern Villa</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  512 Valley Rd, Boulder, CO
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 4 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 4 Baths</span>
+                  <span class="feat-item">4,200 sq ft</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="property-card" aria-hidden="true">
+              <div class="property-media">
+                <div class="property-badge">Hot Offer</div>
+                <img src="images/property_6.webp" alt="" class="property-thumb" loading="lazy">
+              </div>
+              <div class="property-body">
+                <div class="property-price-row">
+                  <span class="property-price">$980,000</span>
+                  <span class="property-type">Modern Loft</span>
+                </div>
+                <h3 class="property-name">The Minimalist Loft</h3>
+                <p class="property-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  340 Elm District, Portland, OR
+                </p>
+                <div class="property-features">
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7v11m0-4h18m0-7v11M3 10h18"></path></svg> 2 Beds</span>
+                  <span class="feat-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h6m-6 4h6m-9 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"></path></svg> 2 Baths</span>
+                  <span class="feat-item">1,850 sq ft</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Testimonials Section (3 Cards) -->
+    <section class="section-padding bg-alt animate-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="pill">Testimonials</span>
+          <h2 class="section-title">What Our Homeowners Say</h2>
+          <p class="section-subtitle">
+            Authentic experiences from clients who realized their dream home visions with Treefalls.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card animate-item">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "Building with Treefalls was an inspiring experience. The attention to natural light, acoustic engineering, and materials blew us away. It feels like living inside a modern sanctuary every day."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">MV</div>
+              <div class="author-info">
+                <h4 class="author-name">Marcus & Olivia Vance</h4>
+                <p class="author-meta">Owners — The Obsidian Villa, Aspen</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card animate-item">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "From virtual blueprint review to final key handover, the process was seamless and strictly on schedule. The eco-efficiency has slashed our energy costs while maintaining pure luxury."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">ER</div>
+              <div class="author-info">
+                <h4 class="author-name">Dr. Elena Rostova</h4>
+                <p class="author-meta">Resident — Solaria Waterfront, Miami</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card animate-item">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "The craftsmanship is in a league of its own. Every corner reflects genuine passion and precision. Treefalls didn't just build a house; they shaped our family's future."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">DK</div>
+              <div class="author-info">
+                <h4 class="author-name">David & Sarah Kim</h4>
+                <p class="author-meta">Homeowners — Pinecrest Haven, Austin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Call-to-Action Banner -->
+    <section class="cta-section animate-section" id="cta-banner">
+      <div class="container">
+        <div class="cta-banner animate-item">
+          <div class="cta-content">
+            <span class="pill pill-light">Start Your Journey</span>
+            <h2 class="cta-title">Ready to Build Your Dream Home?</h2>
+            <p class="cta-desc">
+              Connect with our principal architectural specialists today. Book an exclusive consultation and private walkthrough of available estates.
+            </p>
+            <div class="cta-actions">
+              <button class="btn btn-white">Schedule Private Tour</button>
+              <button class="btn btn-outline-white">Speak with an Architect</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. Footer (4 Link Columns and Social Icons) -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand & Bio -->
+        <div class="footer-col footer-brand-col">
+          <a href="#" class="nav-logo footer-logo" aria-label="Treefalls Home">
+            <svg class="house-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/>
+            </svg>
+            <span class="logo-text">Treefalls</span>
+          </a>
+          <p class="footer-bio">
+            Treefalls crafts extraordinary modern residences combining sustainable architectural engineering, bespoke craftsmanship, and timeless design.
+          </p>
+          <div class="footer-contact-info">
+            <p><strong>Email:</strong> contact@treefalls.com</p>
+            <p><strong>Phone:</strong> +1 (800) 458-7332</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Properties -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Properties</h4>
+          <ul class="footer-links">
+            <li><a href="#properties">Luxury Villas</a></li>
+            <li><a href="#properties">Waterfront Estates</a></li>
+            <li><a href="#properties">Modern Penthouses</a></li>
+            <li><a href="#properties">Eco Reserves</a></li>
+            <li><a href="#properties">Virtual Blueprints</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#home">About Treefalls</a></li>
+            <li><a href="#properties">Our Architects</a></li>
+            <li><a href="#properties">Sustainability</a></li>
+            <li><a href="#testimonials">Client Stories</a></li>
+            <li><a href="#cta-banner">Careers & Press</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal & Support -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Legal & Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Escrow & Security</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Buyer's Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar: Social Icons & Copyright -->
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Treefalls Real Estate Inc. All rights reserved.</p>
+        <div class="social-icons">
+          <!-- Twitter / X -->
+          <a href="#" class="social-btn" aria-label="Twitter profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="social-btn" aria-label="Instagram page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="social-btn" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" class="social-btn" aria-label="Facebook page">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed WhatsApp Button with Red Notification Dot -->
+  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.835 11.835 0 005.711 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="notification-dot" aria-label="1 new notification"></span>
+  </a>
+
+  <!-- Slim Dark Vertical Contact Us Tab -->
+  <a href="#contact" class="contact-tab" aria-label="Contact Us">
+    <span class="contact-tab-text">Contact Us</span>
+  </a>
+
+  <!-- GSAP and ScrollTrigger from cdnjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
